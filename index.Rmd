@@ -11,7 +11,7 @@ output:
     toc: true
 ---
 
-```{r setup, echo = FALSE}
+```{r setup, include = FALSE}
 knitr::opts_chunk$set(
   echo = FALSE,
   fig.align = "center"
