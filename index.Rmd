@@ -11,6 +11,21 @@ output:
     toc: true
 ---
 
+```{r setup, echo = FALSE}
+knitr::opts_chunk$set(
+  echo = FALSE,
+  fig.align = "center"
+)
+library(palmerpenguins)
+data(penguins)
+
+# The following objects are used as inline code within the text
+n_individuals <- nrow(penguins)
+n_species <- length(unique(penguins$species))
+n_islands <- length(unique(penguins$island))
+mean_flipper_length <- round(mean(penguins$flipper_length_mm, na.rm = TRUE),2)
+```
+
 # Section 1 title
 
 ## Subsection 1 title
@@ -29,8 +44,6 @@ Numbered list of numbers
 Artistic drawing of palmer penguins.[^art]
 
 ```{r, echo = FALSE}
-library(palmerpenguins)
-data(penguins)
 knitr::kable(penguins[1:20,])
 ```
 
@@ -38,7 +51,7 @@ knitr::kable(penguins[1:20,])
 
 ## Subsection 2 title
 
-The [penguins dataset](https://github.com/allisonhorst/palmerpenguins) contains data on `r nrow(penguins)` individuals, `r length(unique(penguins$species))` species, and from `r length(unique(penguins$island))` islands. Across individuals, the mean flipper length is `r round(mean(penguins$flipper_length_mm, na.rm = TRUE),2)` $mm$.
+The [penguins dataset](https://github.com/allisonhorst/palmerpenguins) contains data on `r n_individuals` individuals, `r n_species` species, and from `r n_islands` islands. Across individuals, the mean flipper length is `r mean_flipper_length` $mm$.
 
 
 ```{r, echo = FALSE}
